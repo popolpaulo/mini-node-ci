@@ -1,5 +1,5 @@
 // __tests__/sum.test.js
-import { sum } from '../src/sum.js';
+import { sum } from '../sum.js';
 
 describe('sum', () => {
   test('additionne deux nombres', () => {
