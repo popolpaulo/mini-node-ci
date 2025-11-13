@@ -25,11 +25,22 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+      - name: Lint
+        run: npm run lint
 
       - name: Run tests
         run: npm test -- --coverage
         env:
           NODE_OPTIONS: --experimental-vm-modules
+
+      - name: Upload coverage artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: |
+            coverage/lcov.info
+            coverage/lcov-report
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
