@@ -1,4 +1,5 @@
 name: CI
+# Trigger test commit to ensure workflow runs (cours étape 4)
 
 on:
   push:
